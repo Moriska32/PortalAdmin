@@ -12,6 +12,5 @@ func main() {
 	router := gin.Default()
 	router.Static("/home/mgtniip/admin")
 	router.Use(cors.Default())
-	routes.Routes(router)
 	log.Fatal(router.Run(":5885"))
 }
