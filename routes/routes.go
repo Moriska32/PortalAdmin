@@ -9,7 +9,7 @@ import (
 func Routes(router *gin.Engine) {
 
 	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", gin.H{})
+		c.HTML(http.StatusOK, "index.html", gin.H{"title": "Home Page"})
 	})
 
 }
