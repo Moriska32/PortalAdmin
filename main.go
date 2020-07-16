@@ -1,7 +1,6 @@
 package main
 
 import (
-	routes "PortalAdmin/routes"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"log"
