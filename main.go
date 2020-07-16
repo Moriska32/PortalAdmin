@@ -10,7 +10,7 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.Static("/home/mgtniip/admin")
+	router.Static("/", "/home/mgtniip/admin")
 	router.Use(cors.Default())
 	log.Fatal(router.Run(":5885"))
 }
