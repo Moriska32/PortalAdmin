@@ -1,15 +1,20 @@
 package main
 
 import (
+	"log"
+	"net/http"
+	_ "os"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"log"
-	_ "os"
 )
 
 func main() {
 	router := gin.Default()
 	router.Static("/", "/home/mgtniip/admin")
 	router.Use(cors.Default())
+	router.NoRoute(func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index.html", gin.H{"title": "Home Page"})
+	})
 	log.Fatal(router.Run(":5885"))
 }
