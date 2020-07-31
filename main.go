@@ -14,7 +14,7 @@ func main() {
 	router.Static("/", "/home/mgtniip/admin")
 	router.Use(cors.Default())
 	router.NoRoute(func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", gin.H{"title": "Home Page"})
+		c.HTML(http.StatusOK, "/home/mgtniip/admin/index.html", gin.H{"title": "Home Page"})
 	})
 	log.Fatal(router.Run(":5885"))
 }
