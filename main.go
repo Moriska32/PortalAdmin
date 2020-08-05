@@ -15,7 +15,7 @@ func main() {
 	router.Use(cors.Default())
 	router.Use(gin.Recovery())
 	router.NoRoute(func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", nil)
+		c.HTML(http.StatusOK, "./app/index.html", nil)
 	})
 	log.Fatal(router.Run(":5885"))
 }
